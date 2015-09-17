@@ -33,3 +33,7 @@ templates.js
 www/*
 plugins/*
 platforms/*
+
+# Git
+!.gitignore
+!.gitkeep

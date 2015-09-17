@@ -80,7 +80,8 @@
     "protractor": "npm run protractor test/protractor.conf.js"
   },
   "dependencies": {
-    "fs": "0.0.2"
+    "fs": "0.0.2",
+    "gulp-file": "^0.2.0"
   },
   "browser": {
     "angular": "./bower_components/angular/angular.js",

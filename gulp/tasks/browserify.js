@@ -52,7 +52,7 @@ function buildScript(file) {
       platformWWW+'cordova.js',
       platformWWW+'cordova_plugins.js'
     ], { base: platformWWW})
-        .pipe(gulp.dest('./www/'));
+        .pipe(gulp.dest(config.dist.root));
 
     gutil.log('Browser platform and plugins injected!');
   }

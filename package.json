@@ -1,16 +1,21 @@
 {
-  "name": "angularjs-gulp-browserify-boilerplate",
+  "name": "angularjs-cordova-gulp-browserify-boilerplate",
   "version": "0.1.0",
-  "author": "Jake Marsh <jakemmarsh@gmail.com>",
-  "description": "Boilerplate using AngularJS, SASS, Gulp, and Browserify while also utilizing best practices.",
+  "author": "Brett Striker <strikeforcezero@gmail.com>",
+  "description": "Boilerplate using AngularJS, Cordova, SASS, Gulp, and Browserify while also utilizing best practices.",
+  "contributors": [{
+    "name": "Jake Marsh",
+    "email": "jakemmarsh@gmail.com"
+  }],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git"
+    "url": "https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate.git"
   },
   "keywords": [
     "express",
     "gulp",
     "browserify",
+    "cordova",
     "angular",
     "sass",
     "karma",

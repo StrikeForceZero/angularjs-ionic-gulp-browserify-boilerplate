@@ -13,7 +13,7 @@ A boilerplate using AngularJS, SASS, Gulp, and Browserify that also utilizes [th
 
 1. Clone this repo from `https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate.git`
 2. Run `npm install` from the root directory
-3. Run `cordova plugin add cordova-plugin-device` (may require installing Gulp globally `npm install cordova -g`)
+3. Run `cordova plugin add cordova-plugin-device` (may require installing Cordova globally `npm install cordova -g`)
 4. Run `cordova platform add browser`
 5. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
 6. Your browser will automatically be opened and directed to the browser-sync proxy address

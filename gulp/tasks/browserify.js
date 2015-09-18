@@ -16,6 +16,7 @@ var handleErrors = require('../util/handleErrors');
 var browserSync  = require('browser-sync');
 var debowerify   = require('debowerify');
 var ngAnnotate   = require('browserify-ngannotate');
+var fs           = require('fs');
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
@@ -33,6 +34,27 @@ function buildScript(file) {
     bundler.on('update', function() {
       rebundle();
     });
+
+    loadBrowserPlatform();
+  }
+
+  function loadBrowserPlatform(){
+    var platformWWW = './platforms/browser/www/';
+
+    if(!fs.existsSync(platformWWW)){
+      gutil.log(gutil.colors.red('Error:'),'Browser platform not installed!!! Cordova will FAIL');
+      gutil.log(gutil.colors.yellow('Info:'),'Please run', gutil.colors.cyan('cordova platform add browser'));
+      return;
+    }
+
+    gulp.src([
+      platformWWW+'plugins/**/*',
+      platformWWW+'cordova.js',
+      platformWWW+'cordova_plugins.js'
+    ], { base: platformWWW})
+        .pipe(gulp.dest('./www/'));
+
+    gutil.log('Browser platform and plugins injected!');
   }
 
   var transforms = [

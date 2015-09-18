@@ -3,19 +3,26 @@
 /**
  * @ngInject
  */
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
+function OnConfig($stateProvider, $locationProvider, $compileProvider, $urlRouterProvider) {
 
-  $locationProvider.html5Mode(true);
+  var root = window.location.pathname;
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
 
   $stateProvider
   .state('Home', {
-    url: '/',
+    url: root,
     controller: 'ExampleCtrl as home',
     templateUrl: 'home.html',
     title: 'Home'
   });
 
-  $urlRouterProvider.otherwise('/');
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+
+  $urlRouterProvider.otherwise(root);
 
 }
 

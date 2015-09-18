@@ -1,0 +1,23 @@
+{
+  "name": "angular-gulp-browserify-boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate",
+  "authors": [
+    "Brett Striker <strikeforcezero@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "ngCordova": "~0.1.17-alpha",
+    "angular-ui-router": "~0.2.15",
+    "angular-mocks": "~1.4.2",
+    "jquery": "~2.1.4"
+  }
+}

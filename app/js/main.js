@@ -3,6 +3,7 @@
 var angular = require('angular');
 
 // angular modules
+require('ngCordova');
 require('angular-ui-router');
 require('./templates');
 require('./controllers/_index');
@@ -13,11 +14,12 @@ require('./directives/_index');
 angular.element(document).ready(function() {
 
   var requires = [
+    'ngCordova',
     'ui.router',
     'templates',
     'app.controllers',
     'app.services',
-    'app.directives'
+    'app.directives',
   ];
 
   // mount on window for testing

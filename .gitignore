@@ -28,3 +28,8 @@ templates.js
 
 #webstorm
 .idea
+
+# Cordova
+www/*
+plugins/*
+platforms/*

@@ -8,24 +8,24 @@ module.exports = {
 
   'styles': {
     'src' : 'app/styles/**/*.scss',
-    'dest': 'build/css',
+    'dest': 'www/css',
     'prodSourcemap': false,
     'sassIncludePaths': []
   },
 
   'scripts': {
     'src' : 'app/js/**/*.js',
-    'dest': 'build/js'
+    'dest': 'www/js'
   },
 
   'images': {
     'src' : 'app/images/**/*',
-    'dest': 'build/images'
+    'dest': 'www/images'
   },
 
   'fonts': {
     'src' : ['app/fonts/**/*'],
-    'dest': 'build/fonts'
+    'dest': 'www/fonts'
   },
 
   'views': {
@@ -38,13 +38,13 @@ module.exports = {
   },
 
   'gzip': {
-    'src': 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
-    'dest': 'build/',
+    'src': 'www/**/*.{html,xml,json,css,js,js.map}',
+    'dest': 'www/',
     'options': {}
   },
 
   'dist': {
-    'root'  : 'build'
+    'root'  : 'www'
   },
 
   'browserify': {

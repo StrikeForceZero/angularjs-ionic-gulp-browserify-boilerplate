@@ -1,7 +1,7 @@
 angularjs-cordova-gulp-browserify-boilerplate
 =====================================
 
-A boilerplate using AngularJS, SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
+A boilerplate using AngularJS SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter). Cordova support intergrated for quick app developement.
 
 [Forked from](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)
 

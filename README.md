@@ -1,31 +1,35 @@
-angularjs-gulp-browserify-boilerplate
+angularjs-cordova-gulp-browserify-boilerplate
 =====================================
 
 A boilerplate using AngularJS, SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
 
-[View contributors](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate/graphs/contributors)
+[Forked from](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)
+
+[View contributors](https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate/graphs/contributors)
 
 ---
 
 ### Getting up and running
 
-1. Clone this repo from `https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git`
+1. Clone this repo from `https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate.git`
 2. Run `npm install` from the root directory
-3. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
-4. Your browser will automatically be opened and directed to the browser-sync proxy address
-5. To prepare assets for production, run the `gulp prod` task (Note: the production task does not fire up the express server, and won't provide you with browser-sync's live reloading. Simply use `gulp dev` during development. More information below)
+3. Run `cordova plugin add cordova-plugin-device` (may require installing Gulp globally `npm install cordova -g`)
+4. Run `cordova platform add browser`
+5. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
+6. Your browser will automatically be opened and directed to the browser-sync proxy address
+7. To prepare assets for production, run the `gulp prod` task (Note: the production task does not fire up the express server, and won't provide you with browser-sync's live reloading. Simply use `gulp dev` during development. More information below)
 
 Now that `gulp dev` is running, the server is up as well and serving files from the `/build` directory. Any changes in the `/app` directory will be automatically processed by Gulp and the changes will be injected to any open browsers pointed at the proxy address.
 
-##### Getting up and running with Yeoman
-
-[angularjs-gulp-browserify-boilerplate generator for Yeoman](https://github.com/alferov/generator-angular-gulp-browserify)
+Note: when building and deploying to a device/emulator you must run `gulp prod` before `cordova [run|build] [android|ios|browser]` to clean `/www` directory of the injected Browser platform Cordova files. (may require adding the desired platform via `cordova platform add [ios|android]` and installing their respective sdks)
 
 ---
 
 This boilerplate uses the latest versions of the following libraries:
 
 - [AngularJS](http://angularjs.org/)
+- [Cordova](https://cordova.apache.org/)
+- [ngCordova](http://ngcordova.com/)
 - [SASS](http://sass-lang.com/)
 - [Gulp](http://gulpjs.com/)
 - [Browserify](http://browserify.org/)

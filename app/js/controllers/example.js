@@ -10,25 +10,28 @@ function ExampleCtrl($cordovaDevice) {
   // ViewModel
   var vm = this;
 
-  vm.title = 'AngularJS, Gulp, and Browserify!';
-  vm.number = 1234;
+  vm.title = 'AngularJS, Cordova, Gulp, and Browserify!';
+  vm.deviceReady = 'Cordova not loaded';
 
-  document.addEventListener("deviceready", function () {
+  document.addEventListener('deviceready', function () {
 
-    vm.number = "Device Ready";
-    console.log("device ready");
+    vm.deviceReady = 'Device Ready - ';
 
-    var device = $cordovaDevice.getDevice();
+    try {
+      angular.isDefined($cordovaDevice.getDevice()); //unfortunately if the plugin is not installed calling this will cause fatal error
+      vm.deviceReady += 'Check console for device information';
+    }
+    catch(e) {
+      vm.deviceReady += 'Plugin not installed, please run "cordova plugin add cordova-plugin-device"';
+      return;
+    }
 
-    var cordova = $cordovaDevice.getCordova();
-
-    var model = $cordovaDevice.getModel();
-
-    var platform = $cordovaDevice.getPlatform();
-
-    var uuid = $cordovaDevice.getUUID();
-
-    var version = $cordovaDevice.getVersion();
+    var device = $cordovaDevice.getDevice(),
+        cordova = $cordovaDevice.getCordova(),
+        model = $cordovaDevice.getModel(),
+        platform = $cordovaDevice.getPlatform(),
+        uuid = $cordovaDevice.getUUID(),
+        version = $cordovaDevice.getVersion();
 
     console.log({
       "device" : device,

@@ -1,12 +1,14 @@
 'use strict';
 
+require('babel-core/register');
+
 var gulpConfig = require('../gulp/config');
 
 exports.config = {
 
   allScriptsTimeout: 11000,
 
-  baseUrl: 'http://localhost:' + gulpConfig.serverPort + '/',
+  baseUrl: 'http://localhost:' + gulpConfig.browserPort + '/',
 
   directConnect: true,
 
@@ -16,7 +18,7 @@ exports.config = {
     platform: 'ANY'
   },
 
-  framework: 'jasmine',
+  framework: 'jasmine2',
 
   jasmineNodeOpts: {
     isVerbose: false,

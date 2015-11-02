@@ -15,9 +15,9 @@
   ],
   "dependencies": {
     "angular": "~1.4.2",
-    "ngCordova": "~0.1.17-alpha",
-    "angular-ui-router": "~0.2.15",
     "angular-mocks": "~1.4.2",
-    "jquery": "~2.1.4"
+    "angular-ui-router": "~0.2.15",
+    "jquery": "~2.1.4",
+    "ngCordova": "~0.1.20-alpha"
   }
 }

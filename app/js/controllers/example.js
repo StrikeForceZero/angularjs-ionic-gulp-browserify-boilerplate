@@ -1,16 +1,12 @@
 'use strict';
 
-var controllersModule = require('./_index');
-
-/**
- * @ngInject
- */
 function ExampleCtrl($cordovaDevice) {
 
   // ViewModel
-  var vm = this;
+  const vm = this;
 
-  vm.title = 'AngularJS, Cordova, Gulp, and Browserify!';
+  vm.title = 'AngularJS, Cordova, Gulp, and Browserify! Written with keyboards and love!';
+  vm.number = 1234;
   vm.deviceReady = 'Cordova not loaded';
 
   document.addEventListener('deviceready', function () {
@@ -21,7 +17,7 @@ function ExampleCtrl($cordovaDevice) {
       angular.isDefined($cordovaDevice.getDevice()); //unfortunately if the plugin is not installed calling this will cause fatal error
       vm.deviceReady += 'Check console for device information';
     }
-    catch(e) {
+    catch (e) {
       vm.deviceReady += 'Plugin not installed, please run "cordova plugin add cordova-plugin-device"';
       return;
     }
@@ -34,16 +30,18 @@ function ExampleCtrl($cordovaDevice) {
         version = $cordovaDevice.getVersion();
 
     console.log({
-      "device" : device,
-      "cordova" : cordova,
-      "model" : model,
-      "platform" : platform,
-      "uuid" : uuid,
-      "version" : version
+      "device": device,
+      "cordova": cordova,
+      "model": model,
+      "platform": platform,
+      "uuid": uuid,
+      "version": version
     });
 
   }, false);
-
 }
 
-controllersModule.controller('ExampleCtrl', ExampleCtrl);
+export default {
+  name: 'ExampleCtrl',
+  fn: ExampleCtrl
+};

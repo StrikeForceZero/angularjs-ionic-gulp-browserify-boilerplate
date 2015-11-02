@@ -47,13 +47,16 @@ The AngularJS files are all located within `/app/js`, structured in the followin
 
 ```
 /controllers
-  _index.js   (the main module on which all controllers will be mounted, loaded in main.js)
+  index.js   (the main module on which all controllers will be mounted, loaded in main.js)
   example.js
 /directives
-  _index.js   (the main module on which all directives will be mounted, loaded in main.js)
+  index.js   (the main module on which all directives will be mounted, loaded in main.js)
+  example.js
+/filters
+  index.js (the main module on which all filters will be mounted, loaded in main.js)
   example.js
 /services
-  _index.js   (the main module on which all services will be mounted, loaded in main.js)
+  index.js   (the main module on which all services will be mounted, loaded in main.js)
   example.js
 constants.js  (any constant values that you want to make available to Angular)
 main.js       (the main file read by Browserify, also where the application is defined and bootstrapped)
@@ -62,19 +65,23 @@ on_config.js  (all route definitions and any logic that need to be executed on a
 templates.js  (this is created via Gulp by compiling your views, and will not be present beforehand)
 ```
 
-Controllers, services, directives, etc. should all be placed within their respective folders, and will be automatically required via their respective `_index.js` using `bulk-require`. Most other logic can be placed in an existing file, or added in new files as long as it is required inside `main.js`.
+##### Module organization
+
+Controllers, services, directives, etc. should all be placed within their respective folders, and will be automatically required and mounted via their respective `index.js` using `bulk-require`. All modules must export an object of the format:
+
+```javascript
+const ExampleModule = function() {};
+
+export default {
+  name: 'ExampleModule',
+  fn: ExampleModule
+};
+
+```
 
 ##### Dependency injection
 
-Dependency injection is carried out with the `ng-annotate` library. In order to take advantage of this, a simple comment of the format:
-
-```javascript
-/**
- * @ngInject
- */
-```
-
-needs to be added directly before any Angular functions/modules. The Gulp tasks will then take care of adding any dependency injection, requiring you only to specify the dependencies within the function call and nothing more.
+Dependency injection is carried out with the `ng-annotate` library. The Gulp tasks will take care of injecting any dependencies, requiring you only to specify the dependencies within the function call and nothing more.
 
 ---
 
@@ -179,8 +186,7 @@ An example test is provided for the following types of AngularJS modules:
 
 - `unit/controllers/example_spec.js`
 - `unit/services/example_spec.js`
+- `unit/directives/example_spec.js`
 - `unit/constants_spec.js`
-
-Testing AngularJS directives becomes a bit more complex involving mock data and DOM traversal, and so has been omitted from this boilerplate. This can be read about in detail [here](http://newtriks.com/2013/04/26/how-to-test-an-angularjs-directive/).
 
 All unit tests are run with `gulp unit`. When running unit tests, code coverage is simultaneously calculated and output as an HTML file to the `/coverage` directory.

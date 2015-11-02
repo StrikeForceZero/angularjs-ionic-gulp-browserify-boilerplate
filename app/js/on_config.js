@@ -1,20 +1,12 @@
 'use strict';
 
-/**
- * @ngInject
- */
-function OnConfig($stateProvider, $locationProvider, $compileProvider, $urlRouterProvider) {
+function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compileProvider) {
 
-  var root = window.location.pathname;
-
-  $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+  $locationProvider.html5Mode(false);
 
   $stateProvider
   .state('Home', {
-    url: root,
+    url: '/',
     controller: 'ExampleCtrl as home',
     templateUrl: 'home.html',
     title: 'Home'
@@ -22,8 +14,8 @@ function OnConfig($stateProvider, $locationProvider, $compileProvider, $urlRoute
 
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 
-  $urlRouterProvider.otherwise(root);
+  $urlRouterProvider.otherwise('/');
 
 }
 
-module.exports = OnConfig;
+export default OnConfig;

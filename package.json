@@ -84,12 +84,10 @@
     "protractor": "protractor test/protractor.conf.js"
   },
   "browser": {
-    "angular": "./bower_components/angular/angular.js",
-    "jquery": "./bower_components/jquery/dist/jquery.js"
+    "angular": "./bower_components/angular/angular.js"
   },
   "browserify-shim": {
-    "angular": "angular",
-    "jquery": "$"
+    "angular": "angular"
   },
   "browserify": {
     "transform": [

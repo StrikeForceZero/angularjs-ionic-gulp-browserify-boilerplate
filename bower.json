@@ -1,7 +1,7 @@
 {
-  "name": "angular-gulp-browserify-boilerplate",
-  "version": "0.0.0",
-  "homepage": "https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate",
+  "name": "angular-cordova-gulp-browserify-boilerplate",
+  "version": "1.0.2",
+  "homepage": "https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate",
   "authors": [
     "Brett Striker <strikeforcezero@gmail.com>"
   ],

@@ -1,8 +1,6 @@
 'use strict';
 
-import angular from 'angular';
-
-function ExampleCtrl($scope, $cordovaDevice) {
+function ExampleCtrl($scope, CordovaService, $cordovaDevice) {
 
   // ViewModel
   const vm = this;
@@ -13,22 +11,20 @@ function ExampleCtrl($scope, $cordovaDevice) {
   vm.deviceReadyStatus  ='Cordova not loaded';
   vm.deviceInfo = {};
 
-  vm.loadDeviceInfo = function(){
-    $scope.$apply(function () { //lets make sure angular hears about our update
-      vm.deviceReady = true;
-      vm.deviceReadyStatus = 'Device Ready';
+  let loadDeviceInfo = () => {
+    vm.deviceReady = true;
+    vm.deviceReadyStatus = 'Device Ready';
 
-      try {
-        angular.isDefined($cordovaDevice.getDevice()); //unfortunately if the plugin is not installed calling this will cause fatal error
-        vm.deviceInfo = $cordovaDevice.getDevice();
-      }
-      catch (e) {
-        vm.deviceReadyStatus += ' - Plugin not installed, please run "cordova plugin add cordova-plugin-device"';
-      }
-    });
+    try {
+      angular.isDefined($cordovaDevice.getDevice()); //unfortunately if the plugin is not installed calling this will cause fatal error
+      vm.deviceInfo = $cordovaDevice.getDevice();
+    }
+    catch (e) {
+      vm.deviceReadyStatus += ' - Plugin not installed, please run "cordova plugin add cordova-plugin-device"';
+    }
   };
 
-  document.addEventListener('deviceready', vm.loadDeviceInfo, false);
+  CordovaService.ready.then( () => loadDeviceInfo() );
 }
 
 export default {

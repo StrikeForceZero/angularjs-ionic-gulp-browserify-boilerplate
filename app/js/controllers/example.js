@@ -1,6 +1,7 @@
 'use strict';
 
 function ExampleCtrl($scope, CordovaService, $cordovaDevice) {
+  'ngInject';
 
   // ViewModel
   const vm = this;

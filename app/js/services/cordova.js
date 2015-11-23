@@ -4,6 +4,7 @@
 // http://stackoverflow.com/a/21906525/1443717
 // https://github.com/aderowbotham/angular-cordova-bootstrap/blob/master/www/js/services/fs-cordova.js
 function CordovaService($document, $timeout, $window, $q) {
+  'ngInject';
 
   const defer = $q.defer();
 

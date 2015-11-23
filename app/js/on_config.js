@@ -1,6 +1,7 @@
 'use strict';
 
 function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compileProvider) {
+  'ngInject';
 
   /* This needs to remain disabled for bundled apps, as the base is disabled in the index.html */
   $locationProvider.html5Mode(false);

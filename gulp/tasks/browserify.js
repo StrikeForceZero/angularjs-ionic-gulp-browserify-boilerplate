@@ -18,12 +18,16 @@ import debowerify   from 'debowerify';
 import ngAnnotate   from 'browserify-ngannotate';
 import fs           from 'fs';
 
+function createSourcemap() {
+  return !global.isProd || config.browserify.prodSourcemap;
+}
+
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
-
-  var bundler = browserify({
+  
+  let bundler = browserify({
     entries: [config.sourceDir + 'js/' + file],
-    debug: true,
+    debug: createSourcemap(),
     cache: {},
     packageCache: {},
     fullPaths: !global.isProd
@@ -73,18 +77,18 @@ function buildScript(file) {
 
   function rebundle() {
     const stream = bundler.bundle();
-    const createSourcemap = global.isProd && config.browserify.prodSourcemap;
+    const sourceMapLocation = global.isProd ? './' : '';
 
     return stream.on('error', handleErrors)
       .pipe(source(file))
-      .pipe(gulpif(createSourcemap, buffer()))
-      .pipe(gulpif(createSourcemap, sourcemaps.init()))
+      .pipe(gulpif(createSourcemap(), buffer()))
+      .pipe(gulpif(createSourcemap(), sourcemaps.init({ loadMaps: true })))
       .pipe(gulpif(global.isProd, streamify(uglify({
         compress: { drop_console: true }
       }))))
-      .pipe(gulpif(createSourcemap, sourcemaps.write('./')))
+      .pipe(gulpif(createSourcemap(), sourcemaps.write(sourceMapLocation)))
       .pipe(gulp.dest(config.scripts.dest))
-      .pipe(browserSync.stream({ once: true }));
+      .pipe(browserSync.stream());
   }
 
   return rebundle();

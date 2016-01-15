@@ -1,18 +1,20 @@
-angularjs-cordova-gulp-browserify-boilerplate
+angularjs-ionic-gulp-browserify-boilerplate
 =====================================
 [![devDependency Status](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate#info=devDependencies)
 
-A boilerplate using AngularJS SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter). Cordova support intergrated for quick app developement.
+A boilerplate using AngularJS SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter). Ionic support intergrated for quick app developement.
+
+[Forked from](https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate)
 
 [Forked from](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)
 
-[View contributors](https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate/graphs/contributors)
+[View contributors](https://github.com/StrikeForceZero/angularjs-ionic-gulp-browserify-boilerplate/graphs/contributors)
 
 ---
 
 ### Getting up and running
 
-1. Clone this repo from `https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate.git`
+1. Clone this repo from `https://github.com/StrikeForceZero/angularjs-ionic-gulp-browserify-boilerplate.git`
 2. Run `npm install` from the root directory
 3. Run `bower install` from the root directory (may require installing Bower globally `npm install bower -g`)
 4. Run `cordova plugin add cordova-plugin-device` (may require installing Cordova globally `npm install cordova -g`)
@@ -31,6 +33,7 @@ Note: when building and deploying to a device/emulator you must run `gulp prod` 
 This boilerplate uses the latest versions of the following libraries:
 
 - [AngularJS](http://angularjs.org/)
+- [Ionic](http://ionicframework.com/)
 - [Cordova](https://cordova.apache.org/)
 - [ngCordova](http://ngcordova.com/)
 - [SASS](http://sass-lang.com/)

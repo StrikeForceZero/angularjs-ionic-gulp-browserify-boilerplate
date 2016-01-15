@@ -1,15 +1,37 @@
-<h1 class="heading -large">{{ home.title | ExampleFilter }}</h1>
+<ion-header-bar align-title="left" class="bar-positive">
+    <div class="buttons">
+        <button class="button">Left Button</button>
+    </div>
+    <h1 class="title">{{ home.title | ExampleFilter }}</h1>
+    <div class="buttons">
+        <button class="button"><ion-spinner icon="ripple"></ion-spinner></button>
+    </div>
+</ion-header-bar>
+<ion-content padding="true">
 
-<h3 class="heading -medium">Here is a fancy number served up courtesy of Angular: <span class="number-example">{{ home.number }}</span></h3>
-<h3 class="heading -medium">Cordova 'Device Ready' Event Status served up courtesy of Angular: <span class="device-ready-example">{{ home.deviceReadyStatus }}</span></h3>
+    <ion-checkbox>Ionic Checkbox</ion-checkbox>
 
-<img src="images/angular.png" height="100" example-directive />
-<img src="images/cordova.png" height="100" />
-<img src="images/gulp.png" height="100" />
-<img src="images/browserify.png" height="100" />
+    <h3 class="heading -medium">Here is a fancy number served up courtesy of Angular: <span class="number-example">{{ home.number }}</span></h3>
+    <h3 class="heading -medium">Cordova 'Device Ready' Event Status served up courtesy of Angular: <span class="device-ready-example">{{ home.deviceReadyStatus }}</span></h3>
 
-<h4 class="heading -small">Device Info</h4>
-<table ng-if="home.deviceReady">
-    <thead><tr><td>Property</td><td>Value</td></tr></thead>
-    <tr ng-repeat="(key, value) in home.deviceInfo"><td>{{key}}:</td><td>{{value}}</td></tr>
-</table>
+    <img src="images/angular.png" height="100" example-directive />
+    <img src="images/cordova.png" height="100" />
+    <img src="images/gulp.png" height="100" />
+    <img src="images/browserify.png" height="100" />
+
+    <h4 class="heading -small">Device Info</h4>
+    <table ng-if="home.deviceReady">
+        <thead><tr><td>Property</td><td>Value</td></tr></thead>
+        <tr ng-repeat="(key, value) in home.deviceInfo"><td>{{key}}:</td><td>{{value}}</td></tr>
+    </table>
+
+</ion-content>
+<ion-footer-bar align-title="left" class="bar-assertive">
+    <div class="buttons">
+        <button class="button">Left Button</button>
+    </div>
+    <h1 class="title">{{ home.title | ExampleFilter }}</h1>
+    <div class="buttons">
+        <button class="button">Right Button</button>
+    </div>
+</ion-footer-bar>

@@ -26,7 +26,7 @@ export default {
   },
 
   fonts: {
-    src: ['app/fonts/**/*'],
+    src: ['app/fonts/**/*', 'bower_components/ionic/fonts/**/*'],
     dest: 'www/fonts'
   },
 

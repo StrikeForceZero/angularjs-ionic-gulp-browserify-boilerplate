@@ -1,5 +1,7 @@
-function OnRun($rootScope, AppSettings) {
+function OnRun($rootScope, AppSettings, $ionicPlatform) {
   'ngInject';
+
+  $ionicPlatform.ready(() => console.log('ionic onready'));
 
   // change page title based on state
   $rootScope.$on('$stateChangeSuccess', (event, toState) => {

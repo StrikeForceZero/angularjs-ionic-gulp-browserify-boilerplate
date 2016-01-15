@@ -1,10 +1,10 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' standalone="yes"?>
 <widget id="com.example.myproject" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CordovaApp</name>
     <description>
-        A sample Apache Cordova application created from a Boilerplate using AngularJS, Cordova, SASS, Gulp, and Browserify while also utilizing best practices.
+        A sample Apache Cordova application created from a Boilerplate using AngularJS, Ionic, SASS, Gulp, and Browserify while also utilizing best practices.
     </description>
-    <author email="strikeforcezero@gmail.com" href="https://github.com/StrikeForceZero/angularjs-cordova-gulp-browserify-boilerplate">
+    <author email="strikeforcezero@gmail.com" href="https://github.com/StrikeForceZero/angularjs-ionic-gulp-browserify-boilerplate">
         Brett Striker
     </author>
     <content src="index.html" />
@@ -23,4 +23,13 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <access origin="*"/>
+    <preference name="webviewbounce" value="false"/>
+    <preference name="UIWebViewBounce" value="false"/>
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="android-minSdkVersion" value="16"/>
+    <preference name="BackupWebStorage" value="none"/>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true"/>
+    </feature>
 </widget>

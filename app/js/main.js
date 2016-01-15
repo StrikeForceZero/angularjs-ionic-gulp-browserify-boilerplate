@@ -4,6 +4,10 @@ import angular from 'angular';
 import constants from './constants';
 import onConfig  from './on_config';
 import onRun     from './on_run';
+import '../../bower_components/ionic/js/ionic';
+import '../../bower_components/ionic/js/ionic-angular';
+import 'angular-animate';
+import 'angular-sanitize';
 import 'angular-ui-router';
 import './templates';
 import './filters';
@@ -21,7 +25,9 @@ const requires = [
   'app.controllers',
   'app.services',
   'app.directives',
-  'ngCordova'
+  'ngCordova',
+  'ionic',
+  'ngAnimate'
 ];
 
 // mount on window for testing

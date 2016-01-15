@@ -1,16 +1,25 @@
-'use strict';
-
 import angular from 'angular';
+
 const bulk = require('bulk-require');
-
 const servicesModule = angular.module('app.services', []);
-
 const services = bulk(__dirname, ['./**/!(*index|*.spec).js']);
 
-Object.keys(services).forEach((key) => {
-  let item = services[key];
+function declare(serviceMap) {
+  Object.keys(serviceMap).forEach((key) => {
+    let item = serviceMap[key];
 
-  servicesModule.service(item.name, item.fn);
-});
+    if (!item) {
+      return;
+    }
+
+    if (item.fn && typeof item.fn === 'function') {
+      servicesModule.service(item.name, item.fn);
+    } else {
+      declare(item);
+    }
+  });
+}
+
+declare(services);
 
 export default servicesModule;

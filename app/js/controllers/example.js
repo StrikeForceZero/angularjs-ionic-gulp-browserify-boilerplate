@@ -1,6 +1,4 @@
-'use strict';
-
-function ExampleCtrl($scope, CordovaService, $cordovaDevice) {
+function ExampleCtrl(CordovaService, $cordovaDevice) {
   'ngInject';
 
   // ViewModel

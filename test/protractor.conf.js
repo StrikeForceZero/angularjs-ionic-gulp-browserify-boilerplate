@@ -1,21 +1,18 @@
-'use strict';
-
 require('babel-core/register');
 
-var gulpConfig = require('../gulp/config');
+const gulpConfig = require('../gulp/config').default;
 
 exports.config = {
 
   allScriptsTimeout: 11000,
 
-  baseUrl: 'http://localhost:' + gulpConfig.browserPort + '/',
-
-  directConnect: true,
+  baseUrl: `http://localhost:${gulpConfig.browserPort}/`,
 
   capabilities: {
     browserName: 'chrome',
-    version: '',
-    platform: 'ANY'
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    build: process.env.TRAVIS_BUILD_NUMBER,
+    name: 'Protractor Tests'
   },
 
   framework: 'jasmine2',
@@ -29,6 +26,10 @@ exports.config = {
 
   specs: [
     'e2e/**/*.js'
-  ]
+  ],
+
+  sauceUser: process.env.SAUCE_USERNAME,
+
+  sauceKey: process.env.SAUCE_ACCESS_KEY
 
 };

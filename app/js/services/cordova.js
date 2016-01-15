@@ -1,5 +1,3 @@
-'use strict';
-
 // Based off:
 // http://stackoverflow.com/a/21906525/1443717
 // https://github.com/aderowbotham/angular-cordova-bootstrap/blob/master/www/js/services/fs-cordova.js
